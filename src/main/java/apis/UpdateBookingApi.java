@@ -1,11 +1,18 @@
 package apis;
 
+import com.github.javafaker.Faker;
 import http.BaseApi;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
+import org.testng.annotations.DataProvider;
 import pojo.request.CreateBookingRequest;
+import util.TestDataHelper;
 
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
+import java.util.stream.IntStream;
 
 import static constants.ApiPaths.*;
 
@@ -39,6 +46,11 @@ public class UpdateBookingApi extends BaseApi {
         super.setBasicAuth(username,password);
         return super.sendRequest(UPDATE_BOOKING.getHttpMethodType());
     }
+
+
+
+
+
 
 
 }
