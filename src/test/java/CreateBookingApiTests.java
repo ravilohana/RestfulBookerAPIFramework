@@ -13,11 +13,7 @@ import java.util.List;
 
 import static org.hamcrest.Matchers.*;
 
-public class CreateBookingApiTests {
-
-
-
-
+public class CreateBookingApiTests extends BaseTest{
 
 
 
@@ -59,24 +55,6 @@ public class CreateBookingApiTests {
     }
 
 
-    // Data provider
-    // With for loop
-    @DataProvider(name = "bookingDataWithForLoop" ,parallel = true)
-    public Object[][] bookingDataProviderWithLoop(){
-        var faker =  TestDataHelper.getFaker();
-        var name = faker.name();
-        var dateFormatter =  DateTimeFormatter.ISO_DATE;
-        var numberOfPlusDays = TestDataHelper.getRandomInt(2);
-
-        List<Object[]> list = new ArrayList<>();
-        for (int i = 0; i < 5; i++) {
-            Object[] objects = new Object[]{name.firstName(), name.lastName(), faker.number().randomNumber(3, true)
-                    , faker.bool().bool(), faker.food().dish(), TestDataHelper.getFutureDate(numberOfPlusDays, dateFormatter)
-                    , TestDataHelper.getFutureDate(numberOfPlusDays+4, dateFormatter)};
-            list.add(objects);
-        }
-        return list.toArray(new Object[0][]);
-    }
 
 
 

@@ -2,6 +2,7 @@ package http;
 
 import config.PropertyConfig;
 import config.PropertyUtil;
+import io.qameta.allure.restassured.AllureRestAssured;
 import io.restassured.RestAssured;
 import io.restassured.filter.log.LogDetail;
 import io.restassured.filter.log.RequestLoggingFilter;
@@ -25,7 +26,8 @@ public abstract class BaseApi {
 
     public BaseApi() {
         this.requestSpecification = RestAssured.given()
-                .baseUri(PropertyUtil.getConfig().baseUrl());
+                .baseUri(PropertyUtil.getConfig().baseUrl())
+                .filter(new AllureRestAssured());
     }
 
 

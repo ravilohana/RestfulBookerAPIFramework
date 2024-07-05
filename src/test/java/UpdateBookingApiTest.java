@@ -14,11 +14,11 @@ import java.util.stream.IntStream;
 
 import static org.hamcrest.Matchers.*;
 
-public class UpdateBookingApiTest {
+public class UpdateBookingApiTest extends BaseTest{
 
 
 
-    private final Faker faker = TestDataHelper.getFaker();
+
 
 
 
@@ -108,24 +108,6 @@ public class UpdateBookingApiTest {
     }
 
 
-    // Data provider
-    // With Stream
-    @DataProvider(name = "bookingDataWithStream",parallel = true)
-    public Object[][] bookingDataProviderWithStream() {
-        var faker = this.faker;
-        var name = faker.name();
-        var dateFormatter = DateTimeFormatter.ISO_DATE;
-
-        return IntStream.range(0, 5)
-                        .mapToObj(i -> {
-
-                            var numberOfPlusDays = TestDataHelper.getRandomInt(2);
-                           return new Object[]{name.firstName(), name.lastName(), faker.number().randomNumber(3, true)
-                                    , faker.bool().bool(), faker.food().dish(), TestDataHelper.getFutureDate(numberOfPlusDays, dateFormatter)
-                                    , TestDataHelper.getFutureDate(numberOfPlusDays+4, dateFormatter)};
-                        })
-                        .toArray(Object[][]::new);
-    }
 
 
 }
