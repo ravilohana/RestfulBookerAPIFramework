@@ -3,12 +3,15 @@
 <suite name="Restful Booker API Tests">
     <test verbose="2" preserve-order="true" name="Create Booking API Parallel Test" parallel="methods">
         <classes>
-            <class name="UpdateBookingApiTest">
+            <class name="GetBookingApiTest">
                 <methods>
-                    <include name="createNewBookingAndUpdate"/>
+                    <include name="validateStatusCodeForGetBookingByIdAPI"/>
                 </methods>
             </class>
 
         </classes>
     </test>
+    <listeners>
+        <listener class-name="listeners.AnnotationsTransformer"/>
+    </listeners>
 </suite>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Restful Booker API Tests">
+    <test verbose="2" preserve-order="true" name="CRUD API Parallel Test" parallel="methods">
+        <classes>
+            <class name="CRUDRestfulBookingApiTest">
+            </class>
+
+        </classes>
+    </test>
+</suite>

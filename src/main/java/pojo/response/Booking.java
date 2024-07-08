@@ -1,10 +1,11 @@
 package pojo.response;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 import pojo.request.BookingDates;
 
-
+@JsonInclude(JsonInclude.Include.NON_NULL)
 @Data
 public class Booking{
 

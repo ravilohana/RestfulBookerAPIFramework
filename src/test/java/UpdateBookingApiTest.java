@@ -2,15 +2,11 @@ import apis.CreateBookingApi;
 import apis.DeleteBookingApi;
 import apis.GetBookingApi;
 import apis.UpdateBookingApi;
-import com.github.javafaker.Faker;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import util.ApiRequestHelper;
 import util.TestDataHelper;
 
 import java.time.format.DateTimeFormatter;
-import java.util.stream.IntStream;
 
 import static org.hamcrest.Matchers.*;
 

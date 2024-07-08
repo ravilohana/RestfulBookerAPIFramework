@@ -1,4 +1,5 @@
 import apis.GetBookingApi;
+import listeners.RetryAnalyzer;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -12,6 +13,7 @@ public class GetBookingApiTest {
         getBookingApi = new GetBookingApi();
     }
 
+//    @Test(description = "Basic HTTP Status check got get booking ids API",retryAnalyzer = RetryAnalyzer.class)
     @Test(description = "Basic HTTP Status check got get booking ids API")
     public void validateStatusCodeForGetBookingIdsAPI(){
         var getBookingIdsResponse =  this.getBookingApi.getAllBookingIds()
@@ -21,6 +23,6 @@ public class GetBookingApiTest {
     @Test(description = "Basic HTTP Status check got get booking ids API")
     public void validateStatusCodeForGetBookingByIdAPI(){
         var getBookingByIdResponse =  this.getBookingApi.getBookingById(20)
-                .then().assertThat().statusCode(200);
+                .then().assertThat().statusCode(201);
     }
 }

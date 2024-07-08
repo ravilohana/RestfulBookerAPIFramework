@@ -1,5 +1,6 @@
 package util;
 
+
 import pojo.request.BookingDates;
 import pojo.request.CreateBookingRequest;
 
@@ -34,6 +35,7 @@ public class ApiRequestHelper {
 
 
     }
+
 
     // Create booking api request payload using POJO's
     public static CreateBookingRequest createBookingRequestPOJO(String firstName,
